@@ -1,0 +1,54 @@
+<%
+const PAGE_NAME = 'qualification-register';
+%>
+<%- include('./includes/common/_head', {PAGE_NAME: PAGE_NAME}); %>
+<%- include('./includes/common/_header'); %>
+<%- include('./includes/common/_globalNav'); %>
+<main class="l-main">
+    <%- include('./includes/common/_mainHead', {H1: "資格登録", TEXT:"QUALIFICATION REGISTER", TYPE: "FORM"}); %>
+    <div class="l-main__body">
+        <section class="c-section">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="c-section__inner">
+                    <div class="c-box">
+                        <div class="c-box__inner">
+                            <dl class="c-form">
+                                <dt class="c-form__title">基本情報</dt>
+                                <dd class="c-form__group">
+                                    <div class="c-form__input">
+                                        <label for="title" class="c-form__label">資格名</label>
+                                        <div class="c-input">
+                                            <input type="text" name="title" id="title" value="" placeholder="例：">
+                                        </div>
+                                    </div>
+                                </dd>
+                                <dd class="c-form__group">
+                                    <div class="c-form__input">
+                                        <label for="date_range" class="c-form__label">取得年月日</label>
+                                        <div class="c-input c-input--date">
+                                            <input type="text" name="date" id="date" value="2020/04/01" readonly>
+                                            <label for="date">
+                                                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                                                    <use href="./img/symbol/common.svg#calendar"></use>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="c-btnBox">
+                        <div class="c-btn c-btn--frame">
+                            <a href="./">戻る</a>
+                        </div>
+                        <div class="c-btn c-btn--primary">
+                            <input type="submit" value="保存">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+<%- include('./includes/common/_footer'); %>

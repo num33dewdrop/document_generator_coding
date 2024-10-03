@@ -1,0 +1,17 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-title {
+  @include flex($direction: column, $gap: 6);
+  h1 {
+    font-family: $font-family_sub;
+    @include font(18, 18, 8, 700);
+  }
+  p {
+    @include font(10, 10, 4);
+    background: $color_corp;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

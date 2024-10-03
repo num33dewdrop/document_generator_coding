@@ -1,0 +1,11 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-textarea {
+  width: 100%;
+  textarea {
+    display: block;
+    @include input(22, 150);
+  }
+}

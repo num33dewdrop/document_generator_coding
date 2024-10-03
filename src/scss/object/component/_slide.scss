@@ -1,0 +1,30 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+  @include tranSet();
+  button {
+    width: 55px;
+    height: 100%;
+    color: $rose;
+    @include flex(center, center, column);
+  }
+  &--delete {
+    background: $grad_rose_alfa;
+  }
+  &.is-show {
+    box-shadow: $shadow-left;
+    left: calc(100% - 55px);
+  }
+  &.is-delete {
+    left: 0;
+    border-radius: 0;
+  }
+}

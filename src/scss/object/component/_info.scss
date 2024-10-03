@@ -1,0 +1,32 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-info {
+  @include flex($direction: column, $gap: 8);
+  &__title {
+    color: $gray;
+    @include font(16, 18, 8, 700);
+  }
+  &__note {
+    color: $gray-sub;
+    @include font(12, 12, 8);
+  }
+  &--box {
+    align-items: flex-end;
+    padding: 10px $side-margin;
+    width: 100%;
+    background: $grad;
+    box-shadow: $shadow2;
+    position: fixed;
+    bottom: $global-nav-height;
+    border-radius: 20px 0 0 0;
+    z-index: 1;
+    .c-info__title {
+      color: $navyBlue-clear;
+    }
+    .c-info__note {
+      color: $gray-clear;
+    }
+  }
+}

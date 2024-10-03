@@ -1,0 +1,28 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  position: relative;
+  &::before, &::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 1px;
+    background-color: $gray;
+    border-radius: 1px;
+    transform-origin: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

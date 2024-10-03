@@ -1,0 +1,58 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-modal {
+  &__content {
+    display: none;
+    border-radius: 5px;
+    border: 1px solid $gray-light;
+    box-shadow: $shadow;
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+  }
+  &__head {
+    height: 50px;
+    background-color: $white;
+    padding: 0 10px;
+    border-bottom: 1px solid $gray-light2;
+    box-shadow: $shadow;
+    @include flex($align: center, $justify: space-between);
+  }
+  &__title {
+    @include flex($align: center, $gap :5);
+    @include font(16, 18, 8, 700);
+    &--delete {
+      color: $rose;
+    }
+  }
+  &__body {
+    padding: 20px 10px;
+    background-color: $gray-clear;
+  }
+  &__foot {
+    height: 50px;
+    background-color: $white;
+    padding: 0 10px;
+    border-top: 1px solid $gray-light2;
+    box-shadow: $shadow;
+    @include flex($align: center, $justify: flex-end, $gap:5);
+  }
+  &__bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: $gray-alfa;
+    z-index: 50;
+    backdrop-filter: blur(0.5px);
+  }
+}

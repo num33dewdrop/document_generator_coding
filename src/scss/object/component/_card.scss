@@ -1,0 +1,82 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-card {
+  width: calc(50% - #{$list-gap}px/2);
+  @include mq() {
+    width: 100%;
+  }
+  &__content {
+    position: relative;
+    background-color: $white;
+    border: 1px solid $gray-light2;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: $shadow;
+    @include flex($direction: column);
+    overflow: hidden;
+    z-index: 1;
+    @include mq() {
+      border: none;
+      border-radius: 0;
+    }
+  }
+  &__bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 0;
+  }
+  &__body {
+    padding: 15px 15px 10px;
+    @include flex($direction: column, $gap:5);
+  }
+  &__foot {
+    width: 100%;
+    border-top: 1px solid $gray-light2;
+    @include flex(center);
+  }
+  &__time {
+    @include font(12, 12, 4);
+  }
+  &__title {
+    @include font(14, 14, 6, 700);
+  }
+  &__btn {
+    flex: 1;
+    display: block;
+    a, button{
+      height: 36px;
+      width: 100%;
+      color: $dark;
+      padding-right: 6px;
+      border-right: 1px solid $gray-light2;
+      @include flex($align: center, $justify: center, $gap: 2);
+      @include font(12, 12, 4);
+      @include tranSet();
+      &:hover {
+        background-color: $emerald-clear;
+      }
+    }
+    &--export {
+      background: $grad_alfa;
+      a, button {
+        color: $navyBlue;
+      }
+    }
+    &--delete {
+      display: block;
+      background: $grad_rose_alfa;
+      a, button {
+        color: $rose;
+      }
+      @include mq() {
+        display: none;
+      }
+    }
+  }
+}

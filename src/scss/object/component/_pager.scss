@@ -1,0 +1,53 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-pager {
+  width: 100%;
+  @include flex(center, space-between);
+  &--end {
+    width: 100%;
+    @include flex(center, flex-end);
+  }
+  &__count {
+    color: $gray-sub;
+    @include font(13, normal, 6);
+  }
+  &__list {
+    @include flex($align: center, $gap: 4);
+  }
+  &__link {
+    @include flex(center, center);
+    @include font(13, 13, 6);
+    @include tranSet();
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: $gray_sub;
+    &[disabled] {
+      pointer-events: none;
+      opacity: .3;
+    }
+    &:hover {
+      background-color: $gray-light2;
+    }
+    &--active {
+      color: $white;
+      background-color: $grad_base2;
+      pointer-events: none;
+    }
+  }
+  @include mq() {
+    padding: 0 $side-margin;
+    @include flex($direction: column, $gap: 4);
+    &--end {
+      justify-content: center;
+      padding: 0 $side-margin;
+    }
+    &--pc {
+      .c-pager__list {
+        display: none;
+      }
+    }
+  }
+}

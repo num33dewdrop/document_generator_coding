@@ -1,0 +1,18 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-user {
+  @include flex(center, center, row, nowrap, 10);
+  padding: 10px 0;
+  &__img {
+    background-color: $gray-light;
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    @include flex(center, center);
+  }
+  &__name {
+    @include font(16, 16, 8);
+  }
+}

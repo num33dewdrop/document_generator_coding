@@ -1,0 +1,18 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-box {
+  padding: 20px $side-margin 30px;
+  background-color: $white;
+  border: 1px solid $gray-light2;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  width: 100%;
+  &__inner {
+    @include flex($direction: column, $gap: 20);
+  }
+  @include mq() {
+    border-radius: 0;
+  }
+}

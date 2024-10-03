@@ -1,0 +1,89 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-btn {
+  a, button, input[type="submit"] {
+    @include font(14, normal, 4);
+    @include flex($align:center, $justify: center, $gap: 8);
+    padding: 0 20px;
+    height: 32px;
+    border-radius: 16px;
+    position: relative;
+  }
+  &--create {
+    a, button {
+      min-width: 140px;
+      color: $white;
+      background: $color_corp;
+      padding: 0 32px 0 20px;
+      box-shadow: $shadow;
+      @include tranSet();
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        right: 30px;
+        display: block;
+        width: 10px;
+        height: 1px;
+        border-radius: 1px;
+        background-color: $white;
+      }
+      &::after {
+        transform: rotate(-90deg);
+      }
+      &:hover {
+        background-color: $emerald-sub;
+        box-shadow: $shadow2;
+      }
+    }
+  }
+  &--primary {
+    a, button, input[type="submit"] {
+      color: $white;
+      background: $color_corp;
+      width: 150px;
+      @include tranSet();
+      &:hover {
+        background-color: $emerald-sub;
+        box-shadow: $shadow2;
+      }
+    }
+  }
+  &--frame {
+    a, button, input[type="submit"] {
+      color: $navyBlue-light2;
+      background: $white;
+      border: 1px solid $navyBlue-light2;
+      width: 150px;
+      @include tranSet();
+      &:hover {
+        background-color: $emerald-sub;
+        box-shadow: $shadow2;
+      }
+    }
+  }
+  &--center {
+    width: 100%;
+    a, button, input[type="submit"] {
+      margin: auto;
+    }
+  }
+  &--cansel {
+    a, button, input[type="submit"] {
+      color: $gray-sub;
+    }
+  }
+  &--delete {
+    a, button, input[type="submit"] {
+      background-color: $rose;
+      color: $white;
+      width: 150px;
+      @include tranSet();
+      &:hover {
+
+        box-shadow: $shadow2;
+      }
+    }
+  }
+}

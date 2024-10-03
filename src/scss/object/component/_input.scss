@@ -1,0 +1,81 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-input {
+  width: 100%;
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"] {
+    @include input();
+  }
+  input[type="number"] {
+    -moz-appearance:textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  &--min {
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 150px;
+    }
+  }
+  &--mid {
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 225px;
+    }
+  }
+  &--date {
+    position: relative;
+    width: fit-content;
+    input[type="text"] {
+      width: 150px;
+      padding: 10px 37px 10px 12px;
+    }
+    svg {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &--dateRange {
+    position: relative;
+    width: fit-content;
+    input[type="text"] {
+      width: 225px;
+      padding: 10px 37px 10px 12px;
+    }
+    svg {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &--num {
+    input[type="number"] {
+      text-align: right;
+    }
+  }
+  &--text {
+    width: fit-content;
+    @include font($size: 12,$space: 8);
+    @include flex($align: center, $gap: 5);
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 225px;
+    }
+  }
+}

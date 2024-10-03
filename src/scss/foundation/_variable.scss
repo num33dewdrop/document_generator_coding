@@ -1,0 +1,69 @@
+$black: #000;
+$dark: #222;
+$gray: #444;
+$gray-sub: #999;
+$gray-sub2: #cacaca;
+$gray-light: #ddd;
+$gray-light2: #eee;
+$gray-clear: #f8f8f8;
+$white: #fff;
+
+$rose: #F04D62;
+
+$emerald: #50A192;
+$emerald-sub: #6CB0A4;
+$emerald-clear: #E5FBF7;
+
+$navyBlue: #00669C;
+$navyBlue-light: #027EBF;
+$navyBlue-light2: #36ACC5;
+$navyBlue-light3: #88DED0;
+$navyBlue-clear: #e2f3fc;
+
+$grad_base1: $navyBlue-light3;
+$grad_base2: $navyBlue-light2;
+$grad_base3: $navyBlue-light;
+$grad_base_alfa1: rgba(136, 222, 208, 0.13);
+$grad_base_alfa2: rgba(54, 172, 197, 0.13);
+$grad_base_alfa3: rgba(2, 126, 191, 0.13);
+$grad: linear-gradient(80deg, $grad_base1, $grad_base2 50%, $grad_base3);
+$grad_alfa: linear-gradient(80deg, $grad_base_alfa1, $grad_base_alfa2 50%, $grad_base_alfa3);
+
+$grad_rose_base1: rgba(255, 255, 255, 0.92);
+$grad_rose_base2: rgba(255, 247, 247, 0.92);
+$grad_rose_base3: rgba(255, 239, 241, 0.92);
+$grad_rose_alfa: linear-gradient(90deg ,$grad_rose_base1, $grad_rose_base2 50%, $grad_rose_base3);
+
+$gray-alfa: rgba(34, 34, 34, 0.1);
+$gray-alfa2: rgba(34, 34, 34, 0.05);
+$gray-alfa3: rgba(34, 34, 34, 0.02);
+$white-alfa: rgba(255, 255, 255, 0.2);
+
+$shadow: 1px 1px 5px rgba(0, 0, 0, 0.08), 3px 3px 18px rgba(0, 0, 0, 0.02);
+$shadow2: 2px 2px 6px rgba(0, 0, 0, 0.12), 3px 3px 20px rgba(0, 0, 0, 0.05);
+
+$shadow-left: 0 -3px 13px rgba(0, 0, 0, 0.02), 0 -3px 25px rgba(0, 0, 0, 0.08);
+
+$color_corp: $grad;
+
+$font-color_default: $gray;
+$font-color_title: $dark;
+
+$font-size_default: 62.5%;
+
+$font-family_corp: "Roboto flex", sans-serif;
+$font-family_sub: "BIZ UDPGothic", sans-serif;
+
+//common
+$side-margin: 15px;
+
+//header
+$header-height: 50px;
+$header-menu-color: $gray;
+
+//g-nav
+$global-nav-width: 75px;
+$global-nav-height: 70px;
+
+//list
+$list-gap: 5;

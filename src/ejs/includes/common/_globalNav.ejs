@@ -1,0 +1,55 @@
+<%
+const NAV_LIST = [
+    {
+        className:'',
+        url:'./',
+        src:'../img/symbol/global_nav.svg#home',
+        text:'ホーム',
+        class:'current'
+    },
+    {
+        className:'',
+        url:'./works-list.html',
+        src:'../img/symbol/global_nav.svg#works',
+        text:'職歴一覧',
+        class:''
+    },
+    {
+        className:'',
+        url:'./academic-background-list.html',
+        src:'../img/symbol/global_nav.svg#academic',
+        text:'学歴一覧',
+        class:''
+    },
+    {
+        className:'',
+        url:'./qualification-list.html',
+        src:'../img/symbol/global_nav.svg#qualification',
+        text:'資格一覧',
+        class:''
+    },
+    {
+        className:'',
+        url:'./user-edit.html',
+        src:'../img/symbol/global_nav.svg#user',
+        text:'会員情報',
+        class:''
+    }
+]
+%>
+<div class="l-globalNav">
+    <nav>
+        <ul>
+            <% NAV_LIST.forEach(item => { %>
+            <li class="<%= item.className %>">
+                <a class="<%= item.class %>" href="<%= item.url %>">
+                    <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+                        <use href="<%= item.src %>"></use>
+                    </svg>
+                    <span><%= item.text %></span>
+                </a>
+            </li>
+            <% }); %>
+        </ul>
+    </nav>
+</div>

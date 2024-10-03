@@ -1,0 +1,8 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-label {
+  @include font(12, 12, 4);
+  color: $gray-sub;
+}

@@ -1,0 +1,11 @@
+<div class="l-main__head">
+    <hgroup class="c-title">
+        <h1><%= H1 %></h1>
+        <p><%= TEXT %></p>
+    </hgroup>
+    <% if(TYPE === "LIST"){ %>
+    <div class="c-btn c-btn--create">
+        <a href="<%= ANC?? '' %>">新規追加</a>
+    </div>
+    <% } %>
+</div>

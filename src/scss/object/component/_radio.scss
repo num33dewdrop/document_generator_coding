@@ -1,0 +1,59 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-radio {
+  @include flex($align: center, $wrap: wrap, $gap: 12, $gap-r:0);
+  label {
+    cursor: pointer;
+    position: relative;
+    padding: 9px 0;
+    @include flex($align: center, $gap: 5);
+    @include font(14, 22, 4);
+    @include tranSet();
+    &::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid $gray-sub;
+      @include tranSet();
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    input[type="radio"] {
+      appearance: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      &::after {
+        content: '';
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $navyBlue-light;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        @include tranSet();
+      }
+      &:checked {
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+    &:has(input[type="checkbox"]:checked) {
+      &::before {
+        border-color: $navyBlue-light;
+      }
+    }
+  }
+}

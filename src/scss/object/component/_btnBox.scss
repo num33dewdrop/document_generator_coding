@@ -1,0 +1,8 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-btnBox {
+  width: 100%;
+  @include flex($align: center, $justify: center, $gap: 15);
+}

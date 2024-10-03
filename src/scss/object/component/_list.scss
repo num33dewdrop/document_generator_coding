@@ -1,0 +1,11 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-list {
+  width: 100%;
+  @include flex($wrap: wrap, $gap: $list-gap);
+  @include mq() {
+    @include flex($direction: column, $gap: $list-gap);
+  }
+}

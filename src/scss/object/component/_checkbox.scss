@@ -1,0 +1,74 @@
+@use '../../foundation/_variable' as *;
+@use '../../foundation/_mixin' as *;
+@use '../../foundation/_keyframes' as *;
+
+.c-checkbox {
+  @include flex($align: center, $wrap: wrap, $gap: 12, $gap-r:0);
+  label {
+    cursor: pointer;
+    position: relative;
+    padding: 9px 0;
+    @include flex($align: center, $gap: 5);
+    @include font(14, 22, 4);
+    @include tranSet();
+    &::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 1px solid $gray-sub;
+      @include tranSet();
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    input[type="checkbox"] {
+      appearance: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      &::before, &::after {
+        content: '';
+        display: block;
+        width: 22px;
+        height: 1px;
+        border-radius: 1px;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include tranSet();
+      }
+      &::before {
+        width: 22px;
+        height: 2px;
+      }
+      &::after {
+        width: 2px;
+        height: 22px;
+      }
+      &:checked {
+        &::before {
+          background-color: $white;
+          width: 15px;
+          transform: rotate(-45deg) translate3d(11px, -2px, 2px)
+        }
+        &::after {
+          background-color: $white;
+          height: 9px;
+          transform: rotate(-40deg) translate3d(6px, 1px, 2px);
+        }
+      }
+    }
+    &:has(input[type="checkbox"]:checked) {
+      &::before {
+        border-color: $navyBlue-light;
+        background-color: $navyBlue-light;
+      }
+    }
+  }
+}
